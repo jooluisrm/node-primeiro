@@ -5,7 +5,7 @@
   "main": "teste.js",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node ./teste.ts"
+    "start": "ts-node ./src/teste.ts"
   },
   "author": "joao",
   "license": "ISC",
