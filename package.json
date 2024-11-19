@@ -4,9 +4,13 @@
   "description": "",
   "main": "teste.js",
   "scripts": {
-    "start": "node ./teste.js",
-    "qualquer": "node ./outro.js"
+    "build": "tsc",
+    "start": "ts-node ./teste.ts"
   },
   "author": "joao",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
 }
