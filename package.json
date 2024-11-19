@@ -5,11 +5,12 @@
   "main": "teste.js",
   "scripts": {
     "build": "tsc",
-    "start": "node --import=tsx --watch ./src/teste.ts"
+    "start": "node --env-file=.env --import=tsx --watch ./src/teste.ts"
   },
   "author": "joao",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^22.9.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
