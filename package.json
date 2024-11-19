@@ -5,12 +5,13 @@
   "main": "teste.js",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node ./src/teste.ts"
+    "start": "node --import=tsx --watch ./src/teste.ts"
   },
   "author": "joao",
   "license": "ISC",
   "devDependencies": {
     "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   }
 }
