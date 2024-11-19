@@ -2,10 +2,10 @@
   "name": "primeiro",
   "version": "1.0.0",
   "description": "",
-  "main": "teste.js",
+  "main": "server.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node --env-file=.env --import=tsx --watch ./src/teste.ts"
+    "start": "node --env-file=.env --import=tsx --watch ./src/server.ts"
   },
   "author": "joao",
   "license": "ISC",
