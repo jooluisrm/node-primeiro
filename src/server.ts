@@ -1,11 +1,13 @@
-import { createServer } from "node:http";
+import express  from "express";
 
-const server = createServer((req, res) => {
-    let nome: string = "Joao Luis";
-    let idade: number = 19;
-    res.end(`Ola Mundo eu sou o ${nome} e tenho ${19} anos!`); 
+const server = express();
+
+server.get('/', (req, res) => {
+    let name = "João Luís";
+    let idade = 19;
+    res.send(`Olá ${name} eu tenho ${idade} anos`);
 });
 
 server.listen(3000, () => {
-    console.log("Servidor funcionando em http://localhost:3000");
+    console.log("Servidor esta rodando no link: http://localhost:3000");
 });
