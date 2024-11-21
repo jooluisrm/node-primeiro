@@ -1,13 +1,11 @@
-import { writeFile } from "fs/promises";
+import { readFile, writeFile } from "fs/promises";
 
 const exec = async () => {
-    console.log("Escrevendo no arquivo...");
+    const FileContent = await readFile("./teste.txt", {encoding: 'utf-8'});
+    
+    const list = FileContent.split("/n");
 
-    const list = ["Bonieky", "João", "Pedro"];
-    const listTxt = list.join("\n");
-
-    await writeFile("./teste.txt", listTxt);
-    console.log("Pronto");
+    console.log(list);
 }
 
 exec();
