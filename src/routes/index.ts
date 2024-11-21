@@ -5,7 +5,7 @@ import { interferir } from "../middlewares/intervir";
 
 const router = express.Router();
 
-router.use(interferir);
+//router.use(interferir);
 
 router.use("/produtos", produtosRouter);
 router.use("/voos", voosRouter);
@@ -16,6 +16,9 @@ router.get("/ping", (req, res) => {
 });
 
 router.get('/', (req, res) => {
+
+    
+
     let name = "João Luís";
     let idade = 19;
     res.json([{ name, idade }]);
