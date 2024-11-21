@@ -5,7 +5,8 @@
   "main": "server.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node --env-file=.env --import=tsx --watch ./src/server.ts"
+    "start": "node --env-file=.env --import=tsx --watch ./src/server.ts",
+    "file": "node --import=tsx --watch ./src/file.ts"
   },
   "author": "joao",
   "license": "ISC",
