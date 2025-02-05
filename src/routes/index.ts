@@ -2,6 +2,7 @@ import express, { RequestHandler } from "express";
 import produtosRouter from "./produtos";
 import voosRouter from "./voos";
 import { interferir } from "../middlewares/intervir";
+import { localStrategyAuth } from "../libs/passport-local";
 
 const router = express.Router();
 
@@ -27,7 +28,7 @@ router.get('/', (req, res) => {
 
 
 
-router.post('/login', async (req, res) => {
+router.post('/login',localStrategyAuth, async (req, res) => {
     res.json({
         user: req.user,
         auth: req.authInfo
