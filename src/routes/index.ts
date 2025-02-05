@@ -24,4 +24,14 @@ router.get('/', (req, res) => {
     res.json([{ name, idade }]);
 });
 
+
+
+
+router.post('/login', async (req, res) => {
+    res.json({
+        user: req.user,
+        auth: req.authInfo
+    })
+})
+
 export default router;
