@@ -5,7 +5,6 @@ import passport from 'passport';
 import { User } from '../types/user';
 
 export const bearerStrategy = new BearerStrategy(async (token, done) => {
-    console.log("token: ", token);
     const user = await findUserByToken(token);
     if (user) {
         return (done(null, user));

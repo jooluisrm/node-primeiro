@@ -40,4 +40,9 @@ router.get('/private', bearerStrategyAuth, (req, res) => {
     res.json({ msg: "Acessou" });
 });
 
+router.get('/privatejtw', (req, res) => {
+    res.json({ msg: "Acessou JWT" });
+});
+
+
 export default router;
