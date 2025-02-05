@@ -1,4 +1,5 @@
 import { User } from "../types/user";
+import jwt from 'jsonwebtoken';
 
 export const findUserByEmailAndPassword = async (email: string, password: string) => {
     if (email === 'joao@gmail.com' && password === '1234') {
@@ -14,6 +15,15 @@ export const findUserByEmailAndPassword = async (email: string, password: string
 
 export const createUserToken = (user: User) => {
     return '1234';
+}
+
+export const createUserJWT = (user: User) => {
+    const payload = {
+        id: user.id
+    }
+    return jwt.sign(payload, process.env.JWT_KEY as string, {
+        expiresIn: '1 minute'
+    });
 }
 
 export const findUserByToken = async (token: string) => {
