@@ -4,6 +4,7 @@ import voosRouter from "./voos";
 import { interferir } from "../middlewares/intervir";
 import { localStrategyAuth } from "../libs/passport-local";
 import { bearerStrategyAuth } from "../libs/passport-bearer";
+import { jwtStrategyAuth } from "../libs/passport-jwt";
 
 const router = express.Router();
 
@@ -40,7 +41,7 @@ router.get('/private', bearerStrategyAuth, (req, res) => {
     res.json({ msg: "Acessou" });
 });
 
-router.get('/privatejtw', (req, res) => {
+router.get('/privatejtw', jwtStrategyAuth, (req, res) => {
     res.json({ msg: "Acessou JWT" });
 });
 
