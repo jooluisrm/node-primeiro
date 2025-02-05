@@ -3,6 +3,7 @@ import produtosRouter from "./produtos";
 import voosRouter from "./voos";
 import { interferir } from "../middlewares/intervir";
 import { localStrategyAuth } from "../libs/passport-local";
+import { bearerStrategyAuth } from "../libs/passport-bearer";
 
 const router = express.Router();
 
@@ -18,7 +19,7 @@ router.get("/ping", (req, res) => {
 
 router.get('/', (req, res) => {
 
-    
+
 
     let name = "João Luís";
     let idade = 19;
@@ -28,11 +29,15 @@ router.get('/', (req, res) => {
 
 
 
-router.post('/login',localStrategyAuth, async (req, res) => {
+router.post('/login', localStrategyAuth, async (req, res) => {
     res.json({
         user: req.user,
         auth: req.authInfo
-    })
-})
+    });
+});
+
+router.get('/private', bearerStrategyAuth, (req, res) => {
+    res.json({ msg: "Acessou" });
+});
 
 export default router;
